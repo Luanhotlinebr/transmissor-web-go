@@ -175,6 +175,9 @@ func adminHandler(w http.ResponseWriter, r *http.Request) {
 				<form method="POST" action="/toggle">
 					<button type="submit" id="btn">Iniciar Transmissão</button>
 				</form>
+				<form method="POST" action="/shutdown" onsubmit="return confirm('Tem certeza que deseja encerrar o servidor completamente?');">
+          <button type="submit" style="background: #555; margin-top: 10px;">Desligar Servidor</button>
+        </form>
 			</div>
 
 			<div class="box">
@@ -365,16 +368,14 @@ func apiViewersHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	go captureLoop()
-
 	http.HandleFunc("/", adminHandler)
 	http.HandleFunc("/toggle", toggleHandler)
 	http.HandleFunc("/status", statusHandler)
 	http.HandleFunc("/watch", watchHandler)
 	http.HandleFunc("/fps", fpsHandler)
-	
 	// Rota alterada para o WebSocket
 	http.HandleFunc("/ws", wsHandler)
-	
+	http.HandleFunc("/shutdown", shutdownHandler)
 	http.HandleFunc("/heartbeat", heartbeatHandler)
 	http.HandleFunc("/api/viewers", apiViewersHandler)
 
