@@ -20,16 +20,20 @@ Aplicação em Go que transmite a tela do computador em tempo real pela rede loc
 Verifique:
 ```bash
 go version
+```
 2. Clonar o projeto
-Bash
-git clone [https://github.com/Luanhotlinebr/transmissor-web-go.git](https://github.com/Luanhotlinebr/transmissor-web-go.git)
+```bash
+git clone https://github.com/Luanhotlinebr/transmissor-web-go.git
 cd transmissor-web-go
+```
 3. Instalar dependências
-Bash
+```bash
 go mod tidy
+```
 4. Executar o projeto
-Bash
+```bash
 go run main.go
+```
 O sistema abrirá automaticamente no navegador: http://localhost:8080
 ```
 
