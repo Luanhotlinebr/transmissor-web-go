@@ -43,7 +43,7 @@ Se você desejar gerar um arquivo executável do projeto para rodar diretamente 
 Para compilar e gerar o executável:
 
 ```bash
-GOOS=windows GOARCH=amd64 go build -o transmissor.exe
+go build -ldflags "-H windowsgui" -o transmissor_invisivel.exe main.go
 ```
 Como executar:
 Basta dar um duplo clique no arquivo transmissor.exe gerado na pasta do projeto, ou rodar no terminal:
