@@ -1,4 +1,4 @@
-"""# 📡 Transmissor de Tela via WebSocket (Go)
+# 📡 Transmissor de Tela via WebSocket (Go)
 
 Aplicação em Go que transmite a tela do computador em tempo real pela rede local utilizando WebSocket.
 
@@ -31,6 +31,7 @@ go mod tidy
 Bash
 go run main.go
 O sistema abrirá automaticamente no navegador: http://localhost:8080
+```
 
 🖥️ Como compilar e executar (Windows e macOS)
 Se você desejar gerar um arquivo executável do projeto para rodar diretamente sem precisar do comando go run, siga as instruções abaixo para o seu sistema:
@@ -39,7 +40,9 @@ Se você desejar gerar um arquivo executável do projeto para rodar diretamente 
 Para compilar e gerar o executável:
 
 Bash
+```bash
 GOOS=windows GOARCH=amd64 go build -o transmissor.exe
+```
 Como executar:
 Basta dar um duplo clique no arquivo transmissor.exe gerado na pasta do projeto, ou rodar no terminal:
 
@@ -48,27 +51,36 @@ transmissor.exe
 🍎 macOS
 Para compilar e gerar o executável em Macs com processador Intel:
 
-Bash
+```bash
 GOOS=darwin GOARCH=amd64 go build -o transmissor
 Para compilar em Macs com processador Apple Silicon (M1/M2/M3):
+```
 
-Bash
+```bash
 GOOS=darwin GOARCH=arm64 go build -o transmissor
+```
+
 Como executar:
 No terminal, dê permissão de execução (se necessário) e rode o arquivo:
 
-Bash
+```bash
 chmod +x transmissor
 ./transmissor
+```
+
 🐧 Linux
 Para compilar e gerar o executável:
 
-Bash
+```bash
 GOOS=linux GOARCH=amd64 go build -o transmissor
 Como executar:
+```
 
-Bash
+```bash
 ./transmissor
+
+```
+
 ⚙️ Como funciona (resumo técnico)
 Captura da tela usando github.com/kbinani/screenshot.
 
@@ -99,4 +111,4 @@ Qualidade da imagem ajustada para equilíbrio entre desempenho e clareza.
 👨‍💻 Autor
 Desenvolvido por Luan Sousa
 🔗 https://github.com/Luanhotlinebr
-"""
+
