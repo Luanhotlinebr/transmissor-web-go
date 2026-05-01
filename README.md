@@ -72,12 +72,10 @@ Para compilar e gerar o executável:
 
 ```bash
 GOOS=linux GOARCH=amd64 go build -o transmissor
-Como executar:
 ```
-
+Como executar:
 ```bash
 ./transmissor
-
 ```
 
 ⚙️ Como funciona (resumo técnico)
