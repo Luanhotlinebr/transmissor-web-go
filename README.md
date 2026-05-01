@@ -48,20 +48,17 @@ GOOS=windows GOARCH=amd64 go build -o transmissor.exe
 Como executar:
 Basta dar um duplo clique no arquivo transmissor.exe gerado na pasta do projeto, ou rodar no terminal:
 
-DOS
+```dos
 transmissor.exe
-🍎 macOS
-Para compilar e gerar o executável em Macs com processador Intel:
-
+```
+🍎 macOS Para compilar e gerar o executável em Macs com processador Intel:
 ```bash
 GOOS=darwin GOARCH=amd64 go build -o transmissor
-Para compilar em Macs com processador Apple Silicon (M1/M2/M3):
 ```
-
+Para compilar em Macs com processador Apple Silicon (M1/M2/M3):
 ```bash
 GOOS=darwin GOARCH=arm64 go build -o transmissor
 ```
-
 Como executar:
 No terminal, dê permissão de execução (se necessário) e rode o arquivo:
 
