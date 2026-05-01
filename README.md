@@ -35,7 +35,6 @@ go mod tidy
 go run main.go
 ```
 O sistema abrirá automaticamente no navegador: http://localhost:8080
-```
 
 🖥️ Como compilar e executar (Windows e macOS)
 Se você desejar gerar um arquivo executável do projeto para rodar diretamente sem precisar do comando go run, siga as instruções abaixo para o seu sistema:
@@ -43,7 +42,6 @@ Se você desejar gerar um arquivo executável do projeto para rodar diretamente 
 📦 Windows
 Para compilar e gerar o executável:
 
-Bash
 ```bash
 GOOS=windows GOARCH=amd64 go build -o transmissor.exe
 ```
