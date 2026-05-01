@@ -1,0 +1,37 @@
+name: Build for Mac
+
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch: 
+
+jobs:
+  build:
+    runs-on: macos-latest 
+
+    steps:
+    - name: Pegar o código
+      uses: actions/checkout@v4
+
+    - name: Instalar o Go no Mac da nuvem
+      uses: actions/setup-go@v5
+      with:
+        go-version: 'stable'
+
+    - name: Baixar as bibliotecas (Screenshot e Gorilla)
+      run: go mod download
+
+    - name: Compilar para Mac antigo (Processador Intel)
+      run: GOOS=darwin GOARCH=amd64 go build -o transmissor_mac_intel .
+
+    - name: Compilar para Mac novo (Processador Apple Silicon M1/M2/M3)
+      run: GOOS=darwin GOARCH=arm64 go build -o transmissor_mac_apple .
+
+    - name: Empacotar os arquivos gerados num ZIP para baixar
+      uses: actions/upload-artifact@v4
+      with:
+        name: Transmissor-Mac-Builds
+        path: |
+          transmissor_mac_intel
+          transmissor_mac_apple
